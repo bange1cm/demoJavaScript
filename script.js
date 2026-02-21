@@ -17,7 +17,6 @@ function validateForm(event) {
     password == "" ||
     country == "" ||
     isNaN(age) ||
-    age < 0 ||
     gender == ""
   ) {
     alert("Please fill in all fields correctly.");
