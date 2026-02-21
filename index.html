@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Demo - Interactive Home Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>JS Demo</h2>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">Features ▼</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#carousel">Image Carousel</a></li>
+                        <li><a href="#interactive">Interactive Elements</a></li>
+                        <li><a href="#animations">Animations</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">Modals ▼</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" onclick="showModal('welcome')">Welcome Modal</a></li>
+                        <li><a href="#" onclick="showModal('formDemo')">Form Validation</a></li>
+                        <li><a href="#" onclick="showModal('apiDemo')">API Demo</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title animate-fade-in">Welcome to JavaScript Demo</h1>
+            <p class="hero-subtitle animate-slide-up">Showcasing interactive web features with vanilla JS & HTML</p>
+            <button class="btn btn-primary animate-bounce" onclick="showModal('welcome')">Get Started</button>
+        </div>
+    </section>
+
+    <!-- Image Carousel Section -->
+    <section id="carousel" class="carousel-section">
+        <h2 class="section-title">Image Carousel</h2>
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="carousel-slide active">
+                    <img src="https://picsum.photos/800/400?random=1" alt="Random Image 1">
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://picsum.photos/800/400?random=2" alt="Random Image 2">
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://picsum.photos/800/400?random=3" alt="Random Image 3">
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://picsum.photos/800/400?random=4" alt="Random Image 4">
+
+                </div>
+            </div>
+            <button class="carousel-btn prev" onclick="prevSlide()">&#10094;</button>
+            <button class="carousel-btn next" onclick="nextSlide()">&#10095;</button>
+            <div class="carousel-indicators">
+                <span class="indicator active" onclick="goToSlide(0)"></span>
+                <span class="indicator" onclick="goToSlide(1)"></span>
+                <span class="indicator" onclick="goToSlide(2)"></span>
+                <span class="indicator" onclick="goToSlide(3)"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Elements Section -->
+    <section id="interactive" class="interactive-section">
+        <h2 class="section-title">Interactive Elements</h2>
+        <div class="interactive-grid">
+            <div class="interactive-card">
+                <h3>Color Changer</h3>
+                <div class="color-box" id="colorBox"></div>
+                <button class="btn btn-secondary" onclick="changeColor()">Change Color</button>
+            </div>
+            <div class="interactive-card">
+                <h3>Progress Bar</h3>
+                <div class="progress-container">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+                <button class="btn btn-primary" onclick="startProgress()">Start Progress</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Animations Section -->
+    <section id="animations" class="animations-section">
+        <h2 class="section-title">CSS Animations</h2>
+        <div class="animations-grid">
+            <div class="animation-card">
+                <h3>Hover Effects</h3>
+                <div class="hover-box">
+                    <span>Hover me!</span>
+                </div>
+            </div>
+            <div class="animation-card">
+                <h3>Rotate Animation</h3>
+                <div class="rotate-box" id="rotateBox">
+                    <span>Click to rotate</span>
+                </div>
+            </div>
+            <div class="animation-card">
+                <h3>Pulse Effect</h3>
+                <div class="pulse-box">
+                    <span>Pulsing...</span>
+                </div>
+            </div>
+            <div class="animation-card">
+                <h3>Slide In</h3>
+                <div class="slide-container">
+                    <button class="btn btn-primary" onclick="toggleSlide()">Toggle Slide</button>
+                    <div class="slide-panel" id="slidePanel">
+                        <p>This panel slides in and out!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modalBody">
+                <!-- Modal content will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
